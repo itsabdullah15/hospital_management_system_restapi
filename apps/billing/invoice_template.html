@@ -1,0 +1,72 @@
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .header { text-align: center; margin-bottom: 30px; }
+    .qr { float: right; width: 100px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Hospital Invoice</h2>
+    <p>Invoice #: {{ invoice.id }}</p>
+    <p>Date: {{ invoice.created_at.date }}</p>
+  </div>
+
+  <strong>Patient:</strong> {{ invoice.patient.get_full_name }}<br>
+  <strong>Email:</strong> {{ invoice.patient.email }}<br>
+  <img src="data:image/png;base64,{{ qr_code }}" class="qr">
+
+  <h3>Services</h3>
+  <table>
+    <tr><th>Service</th><th>Description</th><th>Amount</th></tr>
+    {% for service in invoice.services.all %}
+    <tr>
+      <td>{{ service.name }}</td>
+      <td>{{ service.description }}</td>
+      <td>₹{{ service.amount }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h3>Total: ₹{{ invoice.total_amount }}</h3>
+</body>
+</html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .header { text-align: center; margin-bottom: 30px; }
+    .qr { float: right; width: 100px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Hospital Invoice</h2>
+    <p>Invoice #: {{ invoice.id }}</p>
+    <p>Date: {{ invoice.created_at.date }}</p>
+  </div>
+
+  <strong>Patient:</strong> {{ invoice.patient.get_full_name }}<br>
+  <strong>Email:</strong> {{ invoice.patient.email }}<br>
+  <img src="data:image/png;base64,{{ qr_code }}" class="qr">
+
+  <h3>Services</h3>
+  <table>
+    <tr><th>Service</th><th>Description</th><th>Amount</th></tr>
+    {% for service in invoice.services.all %}
+    <tr>
+      <td>{{ service.name }}</td>
+      <td>{{ service.description }}</td>
+      <td>₹{{ service.amount }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h3>Total: ₹{{ invoice.total_amount }}</h3>
+</body>
+</html>

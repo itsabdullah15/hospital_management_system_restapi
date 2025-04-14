@@ -41,5 +41,3 @@ class LabResultViewSet(BasePatientRecordViewSet):
     serializer_class = LabResultSerializer
     model = LabResult 
 
-class ModelCreateView():
-    pass

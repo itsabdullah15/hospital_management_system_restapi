@@ -24,7 +24,9 @@ urlpatterns = [
     # Include the app-specific URLs
     path('api/users/', include('apps.users.urls')),  # This would include the URLs from your 'users' app
     path('api/', include('apps.appointments.urls')),
-    path('api/', include('apps.medical.urls')),
+    path('api/medical', include('apps.medical.urls')),
+    path('api/', include('apps.billing.urls')),
+
     
 ]
 
