@@ -170,7 +170,6 @@ Create a superuser to manage the admin panel (optional):
 
 Below is the visual representation of the authentication process using Mermaid. This flow describes how users interact with the system for registration, login, access to protected routes, and logout.
 
-```mermaid
 flowchart TD
     A[User Registration] -->|POST /api/users/register/| B[Login]
     B -->|POST /api/users/login/| C{JWT Token}
@@ -188,4 +187,5 @@ flowchart TD
 
     linkStyle 0,1,3,4,5,7,8 stroke:#2C6B2F,stroke-width:2px;
     linkStyle 6 stroke:#F44336,stroke-width:2px;
+
 
