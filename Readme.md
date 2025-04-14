@@ -166,13 +166,6 @@ Create a superuser to manage the admin panel (optional):
   `GET /api/payment/qr/{invoice_id}/`
 
 
-## Authentication Flow
-
-# Authentication Flow
-
-Below is a flowchart describing the user authentication process, including registration, login, accessing protected routes, and logout.
-
-```mermaid
 # Authentication Flow
 
 Below is a flowchart describing the user authentication process, including registration, login, accessing protected routes, and logout.
