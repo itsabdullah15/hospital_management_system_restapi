@@ -166,6 +166,51 @@ Create a superuser to manage the admin panel (optional):
   `GET /api/payment/qr/{invoice_id}/`
 
 
+
+## 🏗️ Project Structure
+
+```bash
+hospital_api/                      # Root Project Directory
+├── db.sqlite3                     # SQLite Database File (Dev)
+├── manage.py                      # Django's CLI Utility
+├── Readme.md                      # Project Documentation
+
+├── hospital_api/                  # Project Core Settings
+│   ├── __init__.py
+│   ├── asgi.py                    # ASGI config
+│   ├── settings.py                # Global settings & configs
+│   ├── urls.py                    # Root URL configuration
+│   ├── wsgi.py                    # WSGI config for deployment
+
+├── apps/                          # Main Application Modules
+│
+│   ├── appointments/              # Appointment Booking & Scheduling
+│   │   └── ...                    # Models, Views, Serializers, URLs
+│
+│   ├── billing/                   # Billing, Invoicing & Payments
+│   │   └── ...                    # Invoice PDFs, QR code, transactions
+│
+│   ├── core/                      # Shared Logic & Utilities
+│   │   └── ...                    # Permissions, Validators, Utilities
+│
+│   ├── medical/                   # Medical Records, Labs, Prescriptions
+│   │   └── ...                    # Test results, medical history, drugs
+│
+│   ├── notifications/            # Email/SMS Notifications
+│   │   └── ...                    # Alerts for appointments, bills
+│
+│   ├── users/                     # User Auth & Profile Management
+│       └── ...                    # Patients, Doctors, JWT auth
+```
+
+### ✅ Notes:
+- Each folder inside `apps/` is a Django app with its own models, views, serializers, and routes.
+- The architecture follows **modular design** and **separation of concerns**.
+- Easy to scale and plug-in more features like pharmacy, insurance, analytics, etc.
+
+
+
+
 # Authentication Flow
 
 Below is a flowchart describing the user authentication process, including registration, login, accessing protected routes, and logout.
