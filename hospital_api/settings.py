@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'apps.medical', # Medical history, prescriptions, lab results
     'apps.billing', #  Invoices generation, payments, status
     'apps.notifications', # Email/SMS for reminders & updates
-    'apps.core', #  Common utilities: permissions, mixins, helpers
     'rest_framework',
     'rest_framework.authtoken',
     
