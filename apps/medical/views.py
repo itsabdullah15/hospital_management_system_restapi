@@ -39,4 +39,7 @@ class PrescriptionViewSet(BasePatientRecordViewSet):
 class LabResultViewSet(BasePatientRecordViewSet):
     queryset = LabResult.objects.all()
     serializer_class = LabResultSerializer
-    model = LabResult
+    model = LabResult 
+
+class ModelCreateView():
+    pass
